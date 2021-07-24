@@ -1,0 +1,36 @@
+query Stream($date: String!, $n: Int!, $username: String) {
+  poemStream(date: $date, n: $n, username: $username) {
+    poems {
+      id
+      createdAt
+      poem
+      title
+      type
+      description
+      user {
+        id
+        username
+        email
+        description
+      }
+    }
+    hasMore
+  }
+
+  photoStream(date: $date, n: $n, username: $username) {
+    photos {
+      id
+      createdAt
+      title
+      type
+      description
+      user {
+        id
+        username
+        email
+        description
+      }
+    }
+    hasMore
+  }
+}
